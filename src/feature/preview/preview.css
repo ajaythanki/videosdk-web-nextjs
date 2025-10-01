@@ -1,0 +1,502 @@
+body {
+  /* background-color: #223645;*/
+  background-color: #f8f8ff;
+}
+/* .preview-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin: 150px auto;
+  margin-left: 550px;
+} */
+.preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dialog-wrapper {
+  display: flex;
+  align-items: center;
+}
+.preview-dialog-box {
+  background-color: #fff;
+  box-shadow: 0px 3px 99px #000000b5;
+  border-radius: 25px;
+  padding: 20px;
+  width: 750px;
+  /* margin: 150px auto;  */
+}
+p.dialog-title {
+  letter-spacing: 0px;
+  color: #713c8f;
+  font-size: 16px;
+}
+.title-bar {
+  border: 1px solid #eeeeee;
+}
+/* Style for the camera status box */
+.bg-black {
+  /* background-color: #000; */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  height: 228px;
+  position: relative;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.camera_off_icon {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.custom-font-size {
+  font-size: 12px !important;
+}
+#preview-camera-video {
+  display: block;
+  width: 405px;
+  height: 260px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-shadow {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  box-shadow: 0px 3px 6px #00000029 !important;
+  border-radius: 5px !important;
+}
+
+/* Add styling for icons and spans within the shadow box */
+.custom-shadow > * {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.pre-custom-label {
+  font-size: 13px;
+  color: #223645;
+}
+.custom-switch {
+  background-color: #e7e7e8;
+  min-width: 45px;
+  height: 25px;
+  box-shadow: none;
+}
+.custom-switch:focus {
+  /* background-color: var(--color-primary); */
+  min-width: 45px;
+  height: 25px;
+  border-color: transparent;
+  box-shadow: none;
+}
+.custom-switch:checked {
+  background-color: var(--color-primary);
+  min-width: 45px;
+  height: 25px;
+  border-color: transparent;
+}
+.grey-btn {
+  background: #cdcdd4 0% 0% no-repeat padding-box;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.purple-btn {
+  background: var(--color-primary) 0% 0% no-repeat padding-box;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.purple-btn:disabled {
+  background: var(--color-primary) 0% 0% no-repeat padding-box;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
+  opacity: 0.6;
+}
+
+/* *********************************8Settings*********************** */
+
+.settings-dialog-box {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 25px;
+  width: 440px;
+  padding: 20px;
+}
+button.btn.background-btn {
+  background: black;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+  color: white;
+  height: 65px;
+  width: 125px;
+}
+button.btn.blurr-btn {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  background: transparent linear-gradient(180deg, #ffffff 0%, #dfdfdf 100%) 0%
+    0% no-repeat padding-box;
+  height: 70px;
+  width: 125px;
+}
+button.btn.green-screen-btn {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+  height: 65px;
+  width: 125px;
+  /* background: url('../../../public/images/custom-image.jpg'); */
+  object-fit: fill;
+}
+select.form-select.custom-select {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+  font-size: 12px;
+  border: none;
+}
+.form-check-input.custom-radio {
+  border: 2px solid var(--color-primary);
+  box-shadow: none;
+  /* background-color: white; */
+}
+.form-check-input.custom-radio:checked {
+  background-color: var(--color-primary);
+  background-image: none;
+}
+
+#preview-camera-video_isblurCanvasPresent {
+  display: none;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #42b983;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.preview-setting-close-button {
+  cursor: pointer;
+  background: #dc3545;
+  font-size: 12px;
+  color: white;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .preview-dialog-box {
+    width: auto;
+  }
+}
+@media screen and (min-width: 998px) {
+  .modal-backdrop {
+    backdrop-filter: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .settings-dialog-box {
+    background: none;
+    box-shadow: none;
+    padding: 0px;
+    width: auto !important;
+  }
+}
+
+/* video-player-container.local-preview-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px; 
+  background-color: #000;
+  overflow: hidden;
+}
+
+video-player#local-preview-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.virtual-background-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.virtual-background-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.virtual-background-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.background-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.background-item.selected {
+  border-color: var(--color-primary);
+}
+
+.background-preview {
+  width: 100%;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-preview {
+  width: 100%;
+  height: 80px;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+  font-weight: bold;
+}
+
+.no-background {
+  width: 100%;
+  height: 80px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-weight: bold;
+  border: 1px dashed #dee2e6;
+}
+
+.background-name {
+  font-size: 12px;
+  padding: 6px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Custom checkmark for selected background */
+.background-item.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--color-primary);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.background-item {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.background-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.background-item.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+.background-preview,
+.blur-preview,
+.no-background {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-preview {
+  background-color: #e6e6f5;
+}
+
+.no-background {
+  background-color: #f2f2f2;
+}
+
+.background-name {
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .preview-wrapper {
+    height: 150px;
+  }
+} /* Background Preview Styles */
+.preview-container {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-preview-title {
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+}
+
+/* Zoom custom elements styling */
+video-player-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+video-player {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.preview-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Add these to your existing preview.css file */
+
+/* Make the grid more responsive */
+.virtual-background-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.background-item {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.background-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.background-item.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+.background-preview,
+.blur-preview,
+.no-background {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-preview {
+  background-color: #e6e6f5;
+}
+
+.no-background {
+  background-color: #f2f2f2;
+}
+
+.background-name {
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn.btn-primary.color-strong-voilet {
+  background-color: var(--color-primary);
+  color: white;
+}
